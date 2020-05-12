@@ -17,6 +17,12 @@ void Hajo::forgat()
     vizszintes = !vizszintes;
 }
 
+bool Hajo::atfed(Hajo *h)
+{
+    return _x+_size_x >= h->_x && h->_x+h->_size_x >= _x
+        && _y+_size_y >= h->_y && h->_y+h->_size_y >= _y;
+}
+
 void Hajo::draw()
 {
     if (kijelolve)
@@ -28,7 +34,7 @@ void Hajo::draw()
 
 void Hajo::handle(event ev)
 {
-    if (is_selected(ev.pos_x, ev.pos_y))
+    if (kijelolve)
     {
         if (ev.button == -btn_right)
         {
@@ -39,4 +45,10 @@ void Hajo::handle(event ev)
             kattintasra(this, btn_left);
         }
     }
+}
+
+bool Hajo::is_selected(int mouse_x, int mouse_y)
+{
+    kijelolve = Widget::is_selected(mouse_x, mouse_y);
+    return kijelolve;
 }

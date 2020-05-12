@@ -19,17 +19,19 @@ void Loves::draw()
     {
         if (talalt)
         {
-            gout << move_to(_x+1, _y+1) << color(230, 50, 230) << box(_size_x-1, _size_y-1);
+            gout << move_to(_x+1, _y+1) << color(230, 50, 50) << box(_size_x-1, _size_y-1);
             gout << color(250, 250, 250);
         }
         else
         {
-            gout << color(230, 50, 50);
+            gout << color(250, 250, 250);
+            // gout << color(230, 50, 50);
         }
     }
     else
     {
-        gout << color(50, 230, 50);
+        gout << color(250, 250, 250);
+        // gout << color(50, 230, 50);
     }
     x_rajzol();
 }
