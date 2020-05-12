@@ -49,7 +49,7 @@ void Jatekter::handle(event ev)
         {
             int rel_x = (ev.pos_x - ellen_terfel.x) / CELLA_MERET;
             int rel_y = (ev.pos_y - ellen_terfel.y) / CELLA_MERET;
-            kattintasra(rel_x, rel_y, true);
+            kattintasra(rel_x, rel_y, false);
         }
     }
 }
