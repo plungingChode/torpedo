@@ -1,0 +1,7 @@
+lib*
+cmake*
+CMake*
+Makefile
+build
+.vscode
+*.out
