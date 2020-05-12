@@ -8,6 +8,7 @@ Jatekter::Jatekter(Application *app, int x, int y, int size_x, std::function<voi
       sajat_terfel(_x+30+size_x/2+10, _y+16, 10*CELLA_MERET, 10*CELLA_MERET)
 {
     hatter.open(_size_x, _size_y);
+    hatter.transparent(true);
     // hatter << move_to(0, 0) << color(100, 100, 100) << box(_size_x, _size_y); 
     hatteret_rajzol(30, color(230, 50, 50));
     hatteret_rajzol(30+_size_x/2+10, color(50, 230, 50));
