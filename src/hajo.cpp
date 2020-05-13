@@ -17,19 +17,24 @@ void Hajo::forgat()
     vizszintes = !vizszintes;
 }
 
-bool Hajo::atfed(Hajo *h)
+bool Hajo::benne(int cx_, int cy_)
 {
-    return _x+_size_x >= h->_x && h->_x+h->_size_x >= _x
-        && _y+_size_y >= h->_y && h->_y+h->_size_y >= _y;
+    teglalap a = alak();
+    a.h -= 1;
+    a.w -= 1;
+    return a.benne(cx_, cy_);
 }
 
 void Hajo::draw()
 {
+    gout << move_to(_x, _y) << color(50, 230, 50) << box(_size_x, _size_y);
     if (kijelolve)
     {
-        gout << move_to(_x-2, _y-2) << color(255, 255, 255) << box(_size_x+4, _size_y+4);
+        gout << color(255, 255, 255);
+        gout << move_to(_x, _y) << box(_size_x, 2)
+             << box(-2, _size_y) << box(-(_size_x-1), -2) 
+             << box(2, -(_size_y-2));
     }
-    gout << move_to(_x, _y) << color(50, 230, 50) << box(_size_x, _size_y);
 }
 
 void Hajo::handle(event ev)

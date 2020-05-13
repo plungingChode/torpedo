@@ -25,13 +25,11 @@ void Loves::draw()
         else
         {
             gout << color(250, 250, 250);
-            // gout << color(230, 50, 50);
         }
     }
     else
     {
         gout << color(250, 250, 250);
-        // gout << color(50, 230, 50);
     }
     x_rajzol();
 }
